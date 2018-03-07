@@ -1,3 +1,6 @@
+Format : username,password,username:password:base64
+M'enfin on s'en doute un peu ...
+
 admin,password,admin:password,YWRtaW46cGFzc3dvcmQ=
 admin,,admin:,YWRtaW46
 admin,Password1,admin:Password1,YWRtaW46UGFzc3dvcmQx
