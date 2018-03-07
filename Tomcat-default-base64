@@ -1,3 +1,10 @@
 |admin|password|admin:password|YWRtaW46cGFzc3dvcmQ=|
 | ------------- | ------------- | ------------- | ------------- |
 | test | test | test | test |
+
+
+
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
